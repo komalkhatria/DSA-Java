@@ -41,6 +41,16 @@ public class MiddleOfLinkedList {
             }
             System.out.println("Middle element= " + temp.data);
         }
+
+        int midElement(){
+            Node slow= head;
+            Node fast= head;
+            while(fast!=null && fast.next!=null){
+                slow= slow.next;
+                fast= fast.next.next;
+            }
+            return slow.data;
+        }
     }
 
     public static void main(String[] args) {
@@ -49,10 +59,14 @@ public class MiddleOfLinkedList {
         l.add(7);
         l.add(1);
         l.add(3);
+        l.add(8);
 
         l.display();
         System.out.println();
 
         l.middleElement();
+
+        //using slow and fast pointers
+        System.out.println("Middle element= " + l.midElement());
     }
 }
