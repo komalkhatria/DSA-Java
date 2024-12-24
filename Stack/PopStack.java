@@ -29,11 +29,9 @@ public class PopStack {
                 System.out.println("Stack underflow");
                 return -1;
             }
-            else{
-                System.out.println(stackArray[top] + " popped from the stack");
-                top--;
-                return stackArray[top];
-            }
+            int poppedElement = stackArray[top--];
+            System.out.println(poppedElement + " popped from the stack");
+            return poppedElement;
         }
     }
     public static void main(String[] args) {
